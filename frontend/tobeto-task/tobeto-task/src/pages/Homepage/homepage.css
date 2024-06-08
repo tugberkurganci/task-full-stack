@@ -1,0 +1,13 @@
+.home {
+    min-height: 800px;
+}
+.login-prompt {
+    font-size: 1.5rem; /* Metin boyutunu büyütür */
+    margin-bottom: 2rem; /* Alt boşluğu artırır */
+    padding: 6.5rem; /* İç boşluğu artırır */
+  }
+  .login-button {
+    font-size: 1.2rem; /* Buton metin boyutunu büyütür */
+    padding: 0.75rem 1.5rem; /* Butonun iç boşluklarını ayarlar */
+  }
+  
