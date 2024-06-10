@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import axiosInstance from "../../utils/axiosInterceptors";
 import { TaskRequest, TaskResponse } from "../../models/models";
 import { Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 interface TaskFormProps {
   taskId?: number; // taskId varsa, bir görevi düzenliyoruz demektir
@@ -23,6 +24,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ taskId, projectId, fetchTasks, clos
         try {
           fetchTask(taskId)
         } catch (error) {
+          
           console.error('Görev bilgilerini getirirken hata oluştu:', error);
         }
       }
@@ -55,8 +57,9 @@ const TaskForm: React.FC<TaskFormProps> = ({ taskId, projectId, fetchTasks, clos
       }
       fetchTasks(projectId)
       closeModal();
-    } catch (error) {
+    } catch (error:any) {
       console.error('Görev işlemi sırasında hata oluştu:', error);
+      toast.error(error.response.data.message);
     }
   };
 
